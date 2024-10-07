@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 
 <template>
-    <div class="max-w-md mx-auto p-8">
+    <div class="max-w-md mx-auto p-8 hover:shadow-2xl shadow-lg transition duration-300">
       <h1 class="text-2xl font-bold mb-4">Register</h1>
       <form @submit.prevent="register">
         <div class="mb-4">

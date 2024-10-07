@@ -1,28 +1,28 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 
 <template>
-    <div class="max-w-md mx-auto p-8">
+    <div class="max-w-2xl mx-auto p-8 hover:shadow-2xl shadow-lg transition duration-300">
       <h1 class="text-2xl font-bold mb-4">Admin Dashboard</h1>
       <div v-if="users.length > 0">
-        <table class="w-full">
-          <thead>
-            <tr>
-              <th>Name</th>
+        <table class="min-w-full border-collapse border border-gray-300 text-left">
+          <thead class="bg-gray-50">
+            <tr class="border border-spacing-x-1 border-spacing-y-1">
+              <th class="p-2">Name</th>
               <th>Email</th>
               <th>Approved</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="user in users" :key="user.id">
-              <td>{{ user.name }}</td>
-              <td>{{ user.email }}</td>
-              <td>{{ user.is_approved ? 'Yes' : 'No' }}</td>
-              <td>
+            <tr v-for="user in users" :key="user.id" class="border">
+              <td class="border p-2">{{ user.name }}</td>
+              <td class="border">{{ user.email }}</td>
+              <td class="border">{{ user.is_approved ? 'Yes' : 'No' }}</td>
+              <td class="border">
                 <button
                   v-if="!user.is_approved"
                   @click="approveUser(user.id)"
-                  class="bg-green-500 text-white p-1 rounded"
+                  class="bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-1 px-3 rounded"
                 >Approve</button>
               </td>
             </tr>
